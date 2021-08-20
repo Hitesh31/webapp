@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comments extends Model
 {
-    /**
-     * Get the post that owns the comment.
-     */
+    protected $fillable = [
+        'comment','post_id','user_id'
+    ];
     public function post()
     {
         return $this->belongsTo(Post::class);

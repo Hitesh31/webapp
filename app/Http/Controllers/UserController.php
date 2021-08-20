@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -17,10 +18,10 @@ class UserController extends Controller {
 
     public function  createUser(Request $request)
     {
-//        $name = $request->input('email');
-//        echo $request;
-//        echo $name;
         $this->service->createUser($request->input('username'), $request->input('email'));
     }
-
+    public function fetchPosts(User $user)
+    {
+        $this->service->fetchPosts($user);
+    }
 }

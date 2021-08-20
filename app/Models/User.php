@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Post;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -17,7 +16,7 @@ class User extends Authenticatable
         'email', 'username',
     ];
 
-    public function posts()
+    public function post()
     {
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }

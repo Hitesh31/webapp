@@ -11,7 +11,13 @@ class UserService {
         $user->username = $username;
         $user->email= $email;
         $user->save();
-        echo "reached here";
+        echo "user create successfully";
         return response()->Json(["status"=>"user created successfully"]);
+    }
+    public function fetchPosts($user)
+    {
+       // echo $user;
+        $posts = $user->post;
+        echo $posts;
     }
 }
